@@ -21,7 +21,7 @@ void main()
 		print("Failure 2");
 		adventure(1,$location[The Road to the White Citadel]);
 	}
-	while (contains_text(visit_url(log),"burnouts near the Road to the White Citadel."))
+	while (contains_text(visit_url(log),"burnouts"))
 	{
 		print("Failure 3");
 		adventure(1,$location[The Road to the White Citadel]);

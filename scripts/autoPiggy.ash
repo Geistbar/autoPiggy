@@ -11,12 +11,21 @@ void main()
 		adventure(1,$location[Whitey's Grove]);
 	if (item_amount($item[opium grenade]) < 10)
 		cli_execute("buy 10 opium grenade");
-	if (contains_text(visit_url(log),"You've found the Road to the White Citadel!"))
+	while (contains_text(visit_url(log),"You've found the Road to the White Citadel!"))
+	{
+		print("Failure 1");
 		adventure(1,$location[The Road to the White Citadel]);
+	}
 	while (contains_text(visit_url(log),"burnouts near the Road to the White Citadel."))
+	{
+		print("Failure 2");
 		adventure(1,$location[The Road to the White Citadel]);
+	}
 	while (contains_text(visit_url(log),"terrible biclops guarding the Road"))
+	{
+		print("Failure 3");
 		adventure(1,$location[The Road to the White Citadel]);
+	}
 	
 	// Have to do it directly
 	visit_url("adventure.php?snarfblat=413");

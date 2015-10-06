@@ -14,16 +14,21 @@ void main()
 	if (contains_text(visit_url(log),"You've found the Road to the White Citadel!"))
 	{
 		print("Failure 1");
-		adventure(2,$location[The Road to the White Citadel]);
+		adventure(1,$location[The Road to the White Citadel]);
 	}
-	while (contains_text(visit_url(log),"burnouts near the Road to the White Citadel."))
+	if (visit_url(log).contains_text("Make your way through the dark forest"))
 	{
 		print("Failure 2");
 		adventure(1,$location[The Road to the White Citadel]);
 	}
-	while (contains_text(visit_url(log),"terrible biclops guarding the Road"))
+	while (contains_text(visit_url(log),"burnouts near the Road to the White Citadel."))
 	{
 		print("Failure 3");
+		adventure(1,$location[The Road to the White Citadel]);
+	}
+	while (contains_text(visit_url(log),"terrible biclops guarding the Road"))
+	{
+		print("Failure 4");
 		adventure(1,$location[The Road to the White Citadel]);
 	}
 	
